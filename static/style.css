@@ -1,0 +1,65 @@
+.text-primary {
+  color: white;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: darkblue;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+/* li {
+  display: inline;
+} */
+
+nav a {
+  text-decoration: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+}
+main {
+  width: 1140px;
+  margin: auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.global-stats-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.total-cases-box {
+  padding: 10px 25px;
+  background-color: lightblue;
+  text-align: center;
+}
+
+.active-cases-box {
+  padding: 10px 25px;
+  background-color: blue;
+  color: white;
+  text-align: center;
+}
+
+.deaths-cases-box {
+  padding: 10px 25px;
+  background-color: red;
+  color: white;
+  text-align: center;
+}

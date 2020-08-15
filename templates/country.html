@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="COVID-19 TRACKER APP | Part of the projects at JCC Python Programming
+      Fundamentals with Flask"
+    />
+    <title>
+      COVID-19 TRACKER APP | Part of the projects at JCC Python Programming
+      Fundamentals with Flask
+    </title>
+  </head>
+  <body>
+    <div>
+      <img src="{{country['countryInfo']['flag']}}" alt="" />
+    </div>
+    <div>
+      <ul>
+        <li>
+          <span>Country</span>
+          <span>{{country['country']}}</span>
+        </li>
+        <li>
+          <span>Total</span>
+          <span>{{country['cases']}}</span>
+        </li>
+        <li>
+          <span>Active</span>
+          <span>{{country['active']}}</span>
+        </li>
+        <li>
+          <span>Deaths</span>
+          <span>{{country['deaths']}}</span>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

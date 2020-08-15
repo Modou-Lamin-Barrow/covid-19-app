@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="COVID-19 TRACKER APP | Part of the projects at JCC Python Programming
+      Fundamentals with Flask"
+    />
+    <title>
+      COVID-19 TRACKER APP | Part of the projects at JCC Python Programming
+      Fundamentals with Flask
+    </title>
+
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+  </head>
+  <body>
+    <header>
+      <h1 class="text-primary text-uppercase">COVID-19 Tracker APP</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Global Stats</a></li>
+          <li><a href="/continents/africa">Africa</a></li>
+          <li><a href="/continents/america">America</a></li>
+          <li><a href="/continents/asia">Asia</a></li>
+          <li><a href="/continents/europe">Europe</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2>{{page_title}}: {{covid_data | length}}</h2>
+      <div class="global-stats-container">
+        <div class="total-cases-box">
+          <h3>Total Cases</h3>
+          <p>{{world_stats['cases']}}</p>
+        </div>
+        <div class="active-cases-box">
+          <h3>Active Cases</h3>
+          <p>{{world_stats['active']}}</p>
+        </div>
+        <div class="deaths-cases-box">
+          <h3>Total Deaths</h3>
+          <p>{{world_stats['deaths']}}</p>
+        </div>
+      </div>
+      <form action="/search">
+        <input type="text" placeholder="Search Country" name="country" />
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th style="text-align: left;">Country</th>
+            <th>Total</th>
+            <th>Active</th>
+            <th>Deaths</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for record in covid_data %}
+          <tr>
+            <td>
+              {{loop.index}}.
+              <a href="/countries/{{record['country']}}">
+                {{record['country']}}
+              </a>
+            </td>
+            <td>{{record['cases']}}</td>
+            <td>{{record['active']}}</td>
+            <td>{{record['deaths']}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>
