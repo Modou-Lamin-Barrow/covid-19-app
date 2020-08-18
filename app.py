@@ -1,9 +1,9 @@
 import requests
 import pprint
-# import flask
+
 from flask import Flask, render_template, request
 
-# app = flask.Flask(__name__)
+
 
 app = Flask(__name__)
 
